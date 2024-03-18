@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+
+    <!-- <link rel="stylesheet" href="./alp.css"> -->
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+    <div id="menu"></div>
+
+
+
+    <div class="content-container">
+
+        <!-- <div class="login-container">
+
+            <form action="">
+
+                <h2>Login</h2>
+
+                <div>
+                    <label for="EmailInput">EMAIL</label>
+                    <input type="email" id="EmailInput">
+
+                </div>
+
+                <div>
+                    <div class="passwordHeader">
+                        <label for="PasswordInput">PASSWORD</label>
+                        <span>Forgot?</span>
+                    </div>
+
+                    <input type="password" id="PasswordInput">
+
+                </div>
+
+                <button>Sign In</button>
+
+                <div class="footer">
+                    <span>Create Account</span>
+                </div>
+
+
+            </form>
+
+        </div> -->
+
+
+
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <!-- <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+    <div id="services"></div>
+    <div id="site-footer"></div>
+
+
+
+<script>
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+</script>
+
+    <script>
+        function menuClick() {
+            //Show MENU 
+            var mainContainer = document.querySelector('.content-container');
+            if (mainContainer.classList.contains('show-menu')) {
+                mainContainer.classList.remove('show-menu');
+            } else {
+                mainContainer.classList.add('show-menu');
+            }
+
+
+            var menuContainer = document.querySelector('.menu-container');
+            if (menuContainer.classList.contains('show')) {
+                menuContainer.classList.remove('show');
+            } else {
+                menuContainer.classList.add('show');
+            }
+        }
+
+    </script>
+
+
+    <script>
+
+
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./menu.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('menu').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+
+</body>
+
+</html>

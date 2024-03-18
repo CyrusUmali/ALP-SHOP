@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./nav.html">
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+    <div id="menu">
+
+    </div>
+
+    <div class="content-container">
+
+
+
+        <!-- <div id="all-prod  ucts"></div> -->
+
+
+
+
+        <div class="home-page">
+
+            <button>Shop Now!</button>
+
+            <div class="featured-products-container">
+
+                <h2>Featured Products</h2>
+
+                <div class="product-wrapper">
+                    <div class="product">
+                        <img src="" alt="">
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P899.00</span>
+                        </div>
+                    </div>
+
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <label>Also available in super XL</label>
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <label>Also available in super XL</label>
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <label>Also available in super XL</label>
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <label>Also available in super XL</label>
+                        <div>
+                            <p>Peachy Graphic Look at the What</p>
+                            <span>P800.00</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <footer>
+                    <button>Show More</button>
+                </footer>
+
+            </div>
+
+            <div class="product-category">
+
+
+
+                <div class="product-wrapper">
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Tops</button>
+
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Bottoms</button>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Dresses</button>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Jackets</button>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <div id="services"></div>
+    <div id="site-footer"> </div>
+
+
+    <!-- <div id="id-page"> </div> -->
+
+
+
+    <script>
+        function menuClick() {
+            //Show MENU 
+            var mainContainer = document.querySelector('.content-container');
+            if (mainContainer.classList.contains('show-menu')) {
+                mainContainer.classList.remove('show-menu');
+            } else {
+                mainContainer.classList.add('show-menu');
+            }
+
+
+            var menuContainer = document.querySelector('.menu-container');
+            if (menuContainer.classList.contains('show')) {
+                menuContainer.classList.remove('show');
+            } else {
+                menuContainer.classList.add('show');
+            }
+        }
+
+    </script>
+
+    <script>
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        fetch('./login.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('login').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        fetch('./all-products.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('all-products').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./cart.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('cart').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        fetch('./menu.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('menu').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        // Fetch the HTML content from another file
+        //fetvh nav.html
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./item-page.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('id-page').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+
+
+
+    <!-- product click -->
+    <script>
+        // Function to handle clicks on product elements
+        function handleProductClick(event) {
+            // Check if the clicked element or its parent has the class "product"
+            if (event.target.classList.contains("product") || event.target.closest('.product')) {
+                // Redirect to another HTML file (change "item-page.html" to your desired file)
+                window.location.href = "item-page.html";
+            }
+        }
+
+        // Add click event listener to the entire document
+        document.addEventListener("click", handleProductClick);
+    </script>
+
+
+
+</body>
+
+</html>

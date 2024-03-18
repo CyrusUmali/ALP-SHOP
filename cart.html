@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./alp.css">
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+    <div id="menu"></div>
+
+
+
+    <div class="content-container">
+
+        <div class="cart-container">
+
+            <h2>Cart</h2>
+
+            <form action="">
+
+                <div class="cart-header">
+                    <span>QUANTITY</span>
+                    <span>TOTAL</span>
+                </div>
+
+                <div class="cart-body">
+
+
+                    <div class="item">
+
+                        <div class="product-img">
+                            <img src="" alt="">
+                        </div>
+
+
+                        <div class="product-name">
+
+
+                            <div class="wrapper">
+                                <span> Closet Staples Button Down Tee Closet Staples Button Down Tee </span>
+                                <span>Off White / Extra Small</span>
+                                <div>
+                                    <i class="fas fa-x"></i>
+                                    <span>Remove</span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product-quantity">
+
+                            <div>
+                                <button>-</button>
+                                <input type="text" name="" id="">
+                                <button>+</button>
+                            </div>
+
+                        </div>
+
+                        <div class="product-cost">
+
+                            <div>
+                                <i class="fas fa-peseta-sign"></i>
+                                <span> 123.00</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+
+                        <div class="product-img">
+                            <img src="" alt="">
+                        </div>
+
+
+                        <div class="product-name">
+
+
+                            <div class="wrapper">
+                                <span> Closet Staples Button Down Tee Closet Staples Button Down Tee </span>
+                                <span>Off White / Extra Small</span>
+                                <div>
+                                    <i class="fas fa-x"></i>
+                                    <span>Remove</span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="product-quantity">
+
+                            <div>
+                                <button>-</button>
+                                <input type="text" id="quantityInp">
+                                <label for="quantityInp"></label>
+                                <button>+</button>
+                            </div>
+
+                        </div>
+
+                        <div class="product-cost">
+
+                            <div>
+                                <i class="fas fa-peseta-sign"></i>
+                                <span> 123.00</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </form>
+
+            <div class="cart-footer">
+
+                <div class="section">
+
+                    <div class="cart-cost-analysis">
+
+                        <span>SubTotal</span>
+                        <div>
+                            <i class="fas fa-peseta-sign"></i>
+                            <span>698.00</span>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="payment-method">
+
+                        <label><b> Payment Method </b></label>
+
+                        <div class="wrapper">
+
+                            <div class="item">
+                                <div>
+                                    <img src='./resources/cod.png' alt="asd">
+                                    <label for="codInp">Cash On Delivery</label>
+                                </div>
+
+                                <input id="codInp" type="radio">
+                            </div>
+
+                            <div class="item">
+                                <div>
+                                    <img src="./resources/gcash.png" alt="">
+                                    <label for="gcashInp">Gcash</label>
+                                </div>
+
+                                <input type="radio" id="gcashInp">
+                            </div>
+
+                            <div class="item">
+
+                                <div>
+                                    <img src="./resources/paymaya.png" alt="">
+                                    <label for="paymayaInp">Paymaya</label>
+                                </div>
+
+                                <input type="radio" id="paymayaInp">
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="address">
+
+                        <i class="fas fa-location-dot"></i>
+                        <span>Address:</span>
+
+                        <select title="address">
+                            <option value="">Please Select Your Location</option>
+                        </select>
+
+                    </div>
+
+                    <button>Checkout</button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div id="services"></div>
+    <div id="site-footer"></div>
+
+
+
+
+
+    <script>
+        function menuClick() {
+            //Show MENU 
+            var mainContainer = document.querySelector('.content-container');
+            if (mainContainer.classList.contains('show-menu')) {
+                mainContainer.classList.remove('show-menu');
+            } else {
+                mainContainer.classList.add('show-menu');
+            }
+
+
+            var menuContainer = document.querySelector('.menu-container');
+            if (menuContainer.classList.contains('show')) {
+                menuContainer.classList.remove('show');
+            } else {
+                menuContainer.classList.add('show');
+            }
+        }
+
+    </script>
+
+
+    <script>
+
+
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./menu.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('menu').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+</body>
+
+</html>

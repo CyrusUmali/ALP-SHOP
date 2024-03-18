@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./alp.css">
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+    <div id="menu"></div>
+
+
+
+    <div class="content-container">
+
+        <div class="item-page-container">
+
+            <div class="portion-1">
+
+                <div class="identity-container">
+                 <a href="./index.html"> Home &nbsp;</a> 
+                   <a href="./all-products.html">/All Products &nbsp;</a>  
+                     
+                     /Name of Product
+
+                </div>
+
+                <div class="showcase-img">
+
+                    <img src="" alt="">
+
+                </div>
+
+                <div class="variation-img-container">
+
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+
+                </div>
+
+            </div>
+
+            <div class="portion-2">
+
+                <div class="product-header">
+                    <h2>
+                        Look At The Bright Side Of Life Graphic Tee
+                    </h2>
+                </div>
+
+                <div class="product-body">
+
+                    <div class="cost">
+
+                        P 700.00
+                    </div>
+
+                    <div class="variant-wrapper">
+
+                        <p>Colors</p>
+                        <div>
+                            <span>Off White</span>
+                        </div>
+
+                    </div>
+
+                    <div class="variant-wrapper">
+
+                        <p>Size</p>
+                        <div>
+                            <span>Extra Small</span>
+                            <span> Small</span>
+                            <span> Medium</span>
+                            <span> Large</span>
+                            <span>Extra Large</span>
+                        </div>
+
+                    </div>
+
+                    <div class="quantity">
+
+                        <p>Quantity</p>
+                        <div>
+                            <button>-</button>
+                            <input type="text" name="" id="">
+                            <button>+</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stocks">
+                        <span>Stocks Left</span>
+                        <span>:30</span>
+
+                    </div>
+
+                    <div class="action">
+
+                        <button>Add to Cart</button>
+                        <button><i class="fas fa-heart"></i></button>
+
+                    </div>
+
+                    <div class="description">
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fugit
+                        placeat molestias nemo quisquam magni consequatur tenetur explicabo doloribus
+                        eum excepturi quod debitis delectus voluptate consectetur, neque quae dicta
+                        eligendi?
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="product-recommendations">
+
+            <header>
+                <h1>You may also Like</h1>
+                <span>View All</span>
+            </header>
+
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="" alt="">
+                    <label>Also available in super XL</label>
+                    <div>
+                        <p>Peachy Graphic Look at the What</p>
+                        <span>P800.00</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="" alt="">
+                    <label>Also available in super XL</label>
+                    <div>
+                        <p>Peachy Graphic Look at the What</p>
+                        <span>P800.00</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="" alt="">
+                    <label>Also available in super XL</label>
+                    <div>
+                        <p>Peachy Graphic Look at the What</p>
+                        <span>P800.00</span>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="" alt="">
+                    <label>Also available in super XL</label>
+                    <div>
+                        <p>Peachy Graphic Look at the What</p>
+                        <span>P800.00</span>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div id="services"></div>
+    <div id="site-footer"></div>
+
+
+
+
+    <!-- product click -->
+    <script>
+        // Function to handle clicks on product elements
+        function handleProductClick(event) {
+            // Check if the clicked element or its parent has the class "product"
+            if (event.target.classList.contains("product") || event.target.closest('.product')) {
+                // Redirect to another HTML file (change "item-page.html" to your desired file)
+                window.location.href = "item-page.html";
+            }
+        }
+
+        // Add click event listener to the entire document
+        document.addEventListener("click", handleProductClick);
+    </script>
+
+
+    <script>
+        function menuClick() {
+            //Show MENU 
+            var mainContainer = document.querySelector('.content-container');
+            if (mainContainer.classList.contains('show-menu')) {
+                mainContainer.classList.remove('show-menu');
+            } else {
+                mainContainer.classList.add('show-menu');
+            }
+
+
+            var menuContainer = document.querySelector('.menu-container');
+            if (menuContainer.classList.contains('show')) {
+                menuContainer.classList.remove('show');
+            } else {
+                menuContainer.classList.add('show');
+            }
+        }
+
+    </script>
+
+
+    <script>
+
+
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./menu.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('menu').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    </script>
+
+</body>
+
+</html>
